@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'check.dart';
 
 class AskQuestionPage extends StatefulWidget{
   @override
@@ -20,7 +21,7 @@ class AskQuestionFun extends State<AskQuestionPage> {
         appBar: new AppBar(title: new Text("Ask Question!"), backgroundColor: Colors.deepOrange),
         body: new Container(
           padding: new EdgeInsets.all(32.0),
-          margin:  new EdgeInsets.fromLTRB(0, 10, 0, 10),
+          margin:  new EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
           child: new Center(
             child: new ListView(
               
@@ -57,7 +58,15 @@ class AskQuestionFun extends State<AskQuestionPage> {
               new Padding(padding: new EdgeInsets.all(15.0)),
               new RaisedButton(
                 child: new Text("Post", style: new TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 20.0)),
-                color: Colors.red)
+                color: Colors.red,
+                onPressed: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => check()),
+  );
+}
+                ),
+                
                 
                 ]
                 

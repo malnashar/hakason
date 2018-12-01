@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'check.dart';
+import 'myClass.dart';
 class student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -47,11 +49,12 @@ class studentData extends State<student> {
             ListTile(
               title: Text('Notifications'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => myClass()),
+  );
+}
+,
             ),
             ListTile(
               title: Text('Settings'),
@@ -119,7 +122,12 @@ class studentData extends State<student> {
                              "Programming",
                              style: new TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),
                            ),
-                           onTap: () => debugPrint("recover now"),
+                           onTap: () {
+                             Navigator.push(
+                                      context,
+                              MaterialPageRoute(builder: (context) => check()),
+                                 );
+                                }
                          )
                     ],
                   ),
@@ -139,7 +147,13 @@ class studentData extends State<student> {
                              "Electronics",
                              style: new TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),
                            ),
-                           onTap: () => debugPrint("recover now"),
+                          onTap: () {
+                             Navigator.push(
+                                      context,
+                              MaterialPageRoute(builder: (context) => check()),
+                                 );
+                                }
+
                          )
                     ],
                   ),

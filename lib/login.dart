@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login2.dart';
 import 'student.dart';
+import 'teacher.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -9,6 +10,14 @@ class LoginPage extends StatefulWidget{
   }
 }
 class LoginState extends State<LoginPage> {
+  String name = "";
+
+  void _increasemoney(String str)
+  {
+    setState(() {
+          name = str ;
+        });
+  }
   @override
   Widget build(BuildContext context) {
     return _getScuffold();
@@ -17,6 +26,7 @@ class LoginState extends State<LoginPage> {
 
 
     Widget _getScuffold(){
+      String name = "";
     return new Scaffold(
       body: new SingleChildScrollView(
         child: new Row(
@@ -78,14 +88,17 @@ class LoginButton extends StatelessWidget{
                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(8.0)),
                     onPressed: () {
                       Navigator.push(
-                          context,
-                      MaterialPageRoute(builder: (context) => student(),
-                      ));
-                    }
+                      context,
+                      MaterialPageRoute(builder: (context) => student()),
+                        );
+                      }
+
 
                   ),
                 );
   }
-
+  
 
 }
+
+
